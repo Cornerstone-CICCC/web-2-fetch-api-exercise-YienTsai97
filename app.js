@@ -21,10 +21,10 @@ async function getData(){
     const data = await getWeather()
     const date = new Date(data.current.time)
 
-    temp.innerHTML = ` <h1>${data.current.temperature_2m}${data.current_units.temperature_2m}</h1>`
-    windSpeed.innerHTML = `<h2> ${data.current.wind_speed_10m} ${data.current_units.wind_speed_10m}  </h2>`
+    temp.innerHTML = ` <h2>${data.current.temperature_2m}${data.current_units.temperature_2m}</h1>`
+    windSpeed.innerHTML = `<h2> Wind speed: ${data.current.wind_speed_10m} ${data.current_units.wind_speed_10m}  </h2>`
     locate.innerHTML = `<h2> ${data.timezone} </h2>`
-    time.innerHTML = `<h2>  ${date.toLocaleString()} </h2>`
+    time.innerHTML = `<h2>  Last updated: ${date.toLocaleString()} </h2>`
 }
 
 getData()
